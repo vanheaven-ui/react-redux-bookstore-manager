@@ -4,7 +4,7 @@
 
 The front-end implementation of a web bookstore application.
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
 
