@@ -10,7 +10,7 @@ The front-end implementation of a web bookstore application.
 
 ## Application Screenshot
 
-[screenshot](screenshot/screenshot.png)
+![screenshot](screenshot/screenshot.png)
 ## Content
 
 <a text-align="center" href="#about">Background</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
