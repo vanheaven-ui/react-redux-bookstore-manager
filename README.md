@@ -10,7 +10,7 @@ The front-end implementation of a web bookstore application.
 
 ## Application Screenshot
 
-
+[screenshot](screenshot/screenshot.png)
 ## Content
 
 <a text-align="center" href="#about">Background</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -24,6 +24,11 @@ The front-end implementation of a web bookstore application.
 
 This project was built to accomplish a task by Microverse Inc to build the front-end of a web bookstore manager application. The milestones below comprised the development process.
 1. Project setup.
+
+## Live Demo
+The Features of the application were deployed to Heroku
+
+### Checkout the live link [here](https://secure-sierra-90806.herokuapp.com/)
 
 ## 🔧 Building<a name = "with"></a>
 
@@ -58,14 +63,14 @@ First get a copy of the project on your computer:
 Once you have a local copy of the entire project on your computer, then:
 
 - If you don't meet the above prerequisites, visit [node download and installations docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install node js and npm.
+- Change directory into the directory where you cloned the repository.
+- Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm install` to install the project dependencies in the package.json file.
 
 ### Template <a name = "app"></a>
 
 With the installations above complete, you are set to locally use the code. Follow these simple steps:
 
-- Change directory into the directory where you cloned the repository.
-- Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm start` to start webpack-dev-server.
 - If everything worked well, the browser should automatically render the bookstore manager application on `http://localhost:3000/`.
 
