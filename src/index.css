@@ -30,3 +30,7 @@ code {
   width: 100%;
   text-align: center;
 }
+
+.books-list {
+  margin: 0 auto;
+}
