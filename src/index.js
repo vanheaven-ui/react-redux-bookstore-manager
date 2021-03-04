@@ -5,11 +5,12 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store';
 
-ReactDOM.render(
+const wrappedApp = (
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
+  </React.StrictMode>
 );
+
+ReactDOM.render(wrappedApp, document.getElementById('root'));
