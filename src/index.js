@@ -4,6 +4,22 @@ import './index.css';
 import { Provider } from 'react-redux';
 import App from './components/App';
 import store from './store';
+import { CREATE_BOOK } from './actions';
+
+const initialState = [
+  {
+    id: 1,
+    title: 'Things fall apart',
+    category: 'Learning',
+  },
+  {
+    id: 2,
+    title: 'The History of the Ancient World',
+    category: 'History',
+  },
+];
+
+initialState.map(book => store.dispatch(CREATE_BOOK(book)));
 
 const wrappedApp = (
   <React.StrictMode>
