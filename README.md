@@ -1,17 +1,16 @@
 <div align="center">
 
-# Create React App
+# Magic Bookstore
 
-A React scaffold with basic linter and Github actions configuration.
+The front-end implementation of a web bookstore application.
 
-![Linters](https://img.shields.io/badge/%E2%9C%94%EF%B8%8FLinting-Yes-ff69b4)
+![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
 
 ## Application Screenshot
 
-# This is space for your application screenshot
-
+![screenshot](screenshot/screenshot.png)
 ## Content
 
 <a text-align="center" href="#about">Background</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -23,13 +22,22 @@ A React scaffold with basic linter and Github actions configuration.
 
 ## Background <a name = "about"></a>
 
-This template was created to eliminate the time it takes to scaffold a React application from the `npx create-react-app [App name]`. More so, instead of spending time configuring linters, this repository contains the basic linters to help keep your react code in check both CSS and Javascript. 
+This project was built to accomplish a task by Microverse Inc to build the front-end of a web bookstore manager application. The milestones below comprised the development process.
+1. Project setup.
+
+## Live Demo
+The Features of the application were deployed to Heroku
+
+### Checkout the live link [here](https://secure-sierra-90806.herokuapp.com/)
 
 ## 🔧 Building<a name = "with"></a>
 
 The tools used to build the template are listed below:
 
 - React
+- prop-types
+- react-redux
+- redux
 - eslint
 - stylelint
 
@@ -55,16 +63,16 @@ First get a copy of the project on your computer:
 Once you have a local copy of the entire project on your computer, then:
 
 - If you don't meet the above prerequisites, visit [node download and installations docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install node js and npm.
+- Change directory into the directory where you cloned the repository.
+- Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm install` to install the project dependencies in the package.json file.
 
 ### Template <a name = "app"></a>
 
 With the installations above complete, you are set to locally use the code. Follow these simple steps:
 
-- Change directory into the directory where you cloned the repository.
-- Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm start` to start webpack-dev-server.
-- If everything worked well, the browser should automatically render the calculator on `http://localhost:3000/`.
+- If everything worked well, the browser should automatically render the bookstore manager application on `http://localhost:3000/`.
 
 ## ✒️ Author <a name = "author"></a>
 
@@ -97,4 +105,4 @@ Give a ⭐️ if you like this project!
 ## :clap: Acknowledgements
 
 - [Microverse Community](https://www.microverse.org/) <br />
-- [React Official Documentation](https://reactjs.org/)
+- [Redux getiing started Documentation](https://redux.js.org/introduction/getting-started)
