@@ -5,6 +5,7 @@ const BooksList = () => {
   const books = useSelector(state => state.books);
   return (
     <>
+      <h2>List of Books</h2>
       <table className="books-list">
         <thead>
           <tr>
