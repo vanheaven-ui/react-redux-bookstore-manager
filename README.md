@@ -1,6 +1,6 @@
 <div align="center">
 
-# Magic Bookstore
+# Magic Bookstore Manager
 
 The front-end implementation of a web bookstore application.
 
@@ -25,6 +25,8 @@ The front-end implementation of a web bookstore application.
 This project was built to accomplish a task by Microverse Inc to build the front-end of a web bookstore manager application. The milestones below comprised the development process.
 1. Project setup.
 2. Project folder structure layout.
+3. Make the page dynamic - This involved adding books to and removing books from the redux store.
+4. Implement a book-list filter.
 
 ## Live Demo
 The Features of the application were deployed to Heroku
@@ -33,7 +35,7 @@ The Features of the application were deployed to Heroku
 
 ## 🔧 Building<a name = "with"></a>
 
-The tools used to build the template are listed below:
+The tools used to build the application are listed below:
 
 - React
 - prop-types
@@ -64,13 +66,13 @@ First get a copy of the project on your computer:
 Once you have a local copy of the entire project on your computer, then:
 
 - If you don't meet the above prerequisites, visit [node download and installations docs](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to install node js and npm.
-- Change directory into the directory where you cloned the repository.
+- After installations, change directory into the directory where you cloned the repository.
 - Open the project directory in your editor of choice. For example running `code .` will open the project in VSCode.
 - Run `npm install` to install the project dependencies in the package.json file.
 
-### Template <a name = "app"></a>
+### Magic Bookstore Application <a name = "app"></a>
 
-With the installations above complete, you are set to locally use the code. Follow these simple steps:
+With the above setup complete, you are set to locally use the code. The following steps provide a guide:
 
 - Run `npm start` to start webpack-dev-server.
 - If everything worked well, the browser should automatically render the bookstore manager application on `http://localhost:3000/`.
