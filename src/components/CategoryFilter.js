@@ -1,13 +1,17 @@
-import { bookCategories } from "../container/BooksForm";
+import PropTypes from 'prop-types';
+import { bookCategories } from '../container/BooksForm';
 
-const CategoryFilter = () => (
-  <select defaultValue="default">
-    <option value="default">ALL</option>
+const CategoryFilter = ({ handleChange }) => (
+  <select defaultValue="ALL" onChange={handleChange}>
+    <option value="ALL">ALL</option>
     { bookCategories && bookCategories.map(cat => (
       <option value={cat} key={cat}>{cat}</option>
     ))}
-    <option value="default">All</option>
   </select>
 );
+
+CategoryFilter.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default CategoryFilter;
