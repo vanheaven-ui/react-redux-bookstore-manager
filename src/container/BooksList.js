@@ -17,6 +17,7 @@ const BooksList = ({ books }) => (
         { books && books.map(book => (
           <tr key={Math.random()}>
             <Book bookObj={book} />
+            <td><button type="button">Remove</button></td>
           </tr>
         ))}
       </tbody>
