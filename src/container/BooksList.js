@@ -4,7 +4,7 @@ import Book from '../components/Book';
 import { REMOVE_BOOK } from '../actions';
 
 const BooksList = ({ books, removeBook }) => {
-  const handleRemove = book => {
+  const handleRemoveBook = book => {
     removeBook(book);
   };
 
@@ -22,7 +22,7 @@ const BooksList = ({ books, removeBook }) => {
         <tbody>
           { books && books.map(book => (
             <tr key={Math.random()}>
-              <Book bookObj={book} removeBook={() => handleRemove(book)} />
+              <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
             </tr>
           ))}
         </tbody>
