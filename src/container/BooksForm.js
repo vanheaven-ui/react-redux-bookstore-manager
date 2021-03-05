@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const bookCategories = [
   'Action',
   'Biography',
@@ -8,13 +10,18 @@ const bookCategories = [
   'Sci-Fi',
 ];
 
-// To use useState whenI have to create a new category because setState is currently redundant
-
 const formOpt = category => (
   <option value={category} key={Math.random()}>{category}</option>
 );
 
-const BooksForm = () => (
+const BooksForm = () => {
+  const [state, setState] = useState({
+    id: 0,
+    title: '',
+    category: '',
+  });
+
+  return (
   <>
     <h2>Add a Book</h2>
     <form>
@@ -34,5 +41,6 @@ const BooksForm = () => (
     </form>
   </>
 );
+          };
 
 export default BooksForm;
