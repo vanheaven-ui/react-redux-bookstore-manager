@@ -1,3 +1,8 @@
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { CREATE_BOOK } from '../actions';
+
 const bookCategories = [
   'Action',
   'Biography',
@@ -8,31 +13,67 @@ const bookCategories = [
   'Sci-Fi',
 ];
 
-// To use useState whenI have to create a new category because setState is currently redundant
+const BooksForm = ({ createBook }) => {
+  const [state, setState] = useState({
+    title: '',
+    category: 'default',
+  });
 
-const formOpt = category => (
-  <option value={category} key={Math.random()}>{category}</option>
-);
+  const handleChange = e => {
+    e.preventDefault();
+    setState({
+      id: state.id,
+      title: e.target.tagName === 'INPUT' ? e.target.value : state.title,
+      category: e.target.tagName === 'SELECT' ? e.target.options[e.target.selectedIndex].value : state.category,
+    });
+  };
 
-const BooksForm = () => (
-  <>
-    <h2>Add a Book</h2>
-    <form>
-      <div className="form-group">
-        <input type="text" placeholder="Enter book title" />
-      </div>
-      <div className="form-group">
-        <select>
-          {bookCategories.map(cat => (
-            formOpt(cat)
-          ))}
-        </select>
-      </div>
-      <div className="actions">
-        <button type="submit">Add Book</button>
-      </div>
-    </form>
-  </>
-);
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (state.title !== '' && state.category !== '') {
+      createBook({ ...state, id: Math.ceil(Math.random() * 100) });
+      setState({
+        id: 0,
+        title: '',
+        category: 'default',
+      });
+    }
+  };
 
-export default BooksForm;
+  return (
+    <>
+      <h2>Add a Book</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Enter book title"
+            onChange={e => handleChange(e)}
+            value={state.title}
+          />
+        </div>
+        <div className="form-group">
+          <select onChange={e => handleChange(e)} value={state.category}>
+            <option value="default" disabled>Select Category:</option>
+            { bookCategories.map(cat => (
+              <option value={cat} key={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
+        <div className="actions">
+          <button type="submit">Add Book</button>
+        </div>
+      </form>
+    </>
+  );
+};
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  createBook: book => dispatch(CREATE_BOOK(book)),
+});
+
+export default connect(null, mapDispatchToProps)(BooksForm);
