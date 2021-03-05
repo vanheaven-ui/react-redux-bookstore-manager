@@ -21,9 +21,6 @@ const BooksForm = ({ createBook }) => {
   });
 
   const handleChange = e => {
-    if (e.target.tagName === 'SELECT') {
-      console.log(e.target.options[e.target.selectedIndex].value);
-    }
     e.preventDefault();
     setState({
       id: state.id,
