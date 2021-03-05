@@ -2,9 +2,13 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
-import { CHANGE_FILTER } from '../actions';
+import { CHANGE_FILTER, REMOVE_BOOK } from '../actions';
 
-const BooksList = ({ books, changeFilter, filter }) => {
+const BooksList = ({
+  books, removeBook, changeFilter, filter,
+}) => {
+  const handleRemoveBook = book => removeBook(book);
+
   const handleFilterChange = e => {
     changeFilter(e.target.value);
   };
@@ -29,7 +33,7 @@ const BooksList = ({ books, changeFilter, filter }) => {
         <tbody>
           { books && renderBooksWithFilter().map(book => (
             <tr key={Math.random()}>
-              <Book bookObj={book} />
+              <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
             </tr>
           ))}
         </tbody>
@@ -44,6 +48,7 @@ BooksList.defaultProps = {
 
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
+  removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string,
 };
@@ -54,6 +59,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  removeBook: book => dispatch(REMOVE_BOOK(book)),
   changeFilter: criterion => dispatch(CHANGE_FILTER(criterion)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
