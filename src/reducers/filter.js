@@ -1,7 +1,8 @@
-const filterReducer = (state = '', action) => {
+const filter = 'All';
+
+const filterReducer = (state = filter, action) => {
   switch (action.type) {
     case 'CHANGE_FILTER':
-      console.log(action.criterion);
       return action.criterion;
     default:
       return state;
