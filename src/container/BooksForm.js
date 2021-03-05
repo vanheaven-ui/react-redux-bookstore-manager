@@ -1,4 +1,4 @@
-const bookCategories = [
+export const bookCategories = [
   'Action',
   'Biography',
   'History',
