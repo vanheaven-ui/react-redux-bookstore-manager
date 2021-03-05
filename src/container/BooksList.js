@@ -56,5 +56,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   changeFilter: criterion => dispatch(CHANGE_FILTER(criterion)),
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
