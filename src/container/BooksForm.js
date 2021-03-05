@@ -30,7 +30,6 @@ const BooksForm = ({ createBook }) => {
       title: e.target.tagName === 'INPUT' ? e.target.value : state.title,
       category: e.target.tagName === 'SELECT' ? e.target.value : state.category,
     });
-    console.log(state);
   };
 
   const handleSubmit = e => {
