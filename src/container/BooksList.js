@@ -9,11 +9,15 @@ const BooksList = ({ books, changeFilter, filter }) => {
     changeFilter(e.target.value);
   };
 
+  const renderBooksWithFilter = () => (
+    filter === 'All' ? books : books.filter(book => book.category === filter)
+  );
+
   return (
     <>
-      <h2>List of Books</h2>
+      <h1>Magic Books</h1>
       <CategoryFilter handleChange={e => handleFilterChange(e)} />
-      <h3>{`${filter} Books`}</h3>
+      <h2>{`${filter} Books`}</h2>
       <table className="books-list">
         <thead>
           <tr>
@@ -23,7 +27,7 @@ const BooksList = ({ books, changeFilter, filter }) => {
           </tr>
         </thead>
         <tbody>
-          { books && books.map(book => (
+          { books && renderBooksWithFilter().map(book => (
             <tr key={Math.random()}>
               <Book bookObj={book} />
             </tr>
@@ -35,7 +39,7 @@ const BooksList = ({ books, changeFilter, filter }) => {
 };
 
 BooksList.defaultProps = {
-  filter: 'ALL',
+  filter: '',
 };
 
 BooksList.propTypes = {
