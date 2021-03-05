@@ -25,7 +25,7 @@ The front-end implementation of a web bookstore application.
 This project was built to accomplish a task by Microverse Inc to build the front-end of a web bookstore manager application. The milestones below comprised the development process.
 1. Project setup.
 2. Project folder structure layout.
-3. Make page dynamic - This involved adding books to and removing books from the redux store.
+3. Make the page dynamic - This involved adding books to and removing books from the redux store.
 
 ## Live Demo
 The Features of the application were deployed to Heroku
