@@ -19,7 +19,7 @@ const formOpt = category => (
 
 const BooksForm = ({ createBook }) => {
   const [state, setState] = useState({
-    id: 0,
+    id: 3,
     title: '',
     category: '',
   });
