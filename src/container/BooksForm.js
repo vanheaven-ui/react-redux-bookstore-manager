@@ -15,9 +15,8 @@ const bookCategories = [
 
 const BooksForm = ({ createBook }) => {
   const [state, setState] = useState({
-    id: 3,
     title: '',
-    category: '',
+    category: 'default',
   });
 
   const handleChange = e => {
@@ -32,11 +31,11 @@ const BooksForm = ({ createBook }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (state.title !== '' && state.category !== '') {
-      createBook(state);
+      createBook({ ...state, id: Math.ceil(Math.random() * 100) });
       setState({
-        id: state.id + 1,
+        id: 0,
         title: '',
-        category: '',
+        category: 'default',
       });
     }
   };
@@ -46,10 +45,15 @@ const BooksForm = ({ createBook }) => {
       <h2>Add a Book</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <input type="text" placeholder="Enter book title" onChange={e => handleChange(e)} />
+          <input
+            type="text"
+            placeholder="Enter book title"
+            onChange={e => handleChange(e)}
+            value={state.title}
+          />
         </div>
         <div className="form-group">
-          <select onChange={e => handleChange(e)} defaultValue="default">
+          <select onChange={e => handleChange(e)} value={state.category}>
             <option value="default" disabled>Select Category:</option>
             { bookCategories.map(cat => (
               <option value={cat} key={cat}>{cat}</option>
