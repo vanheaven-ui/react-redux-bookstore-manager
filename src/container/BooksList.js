@@ -1,16 +1,27 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import { REMOVE_BOOK } from '../actions';
+import CategoryFilter from '../components/CategoryFilter';
+import { CHANGE_FILTER, REMOVE_BOOK } from '../actions';
 
-const BooksList = ({ books, removeBook }) => {
-  const handleRemoveBook = book => {
-    removeBook(book);
+const BooksList = ({
+  books, removeBook, changeFilter, filter,
+}) => {
+  const handleRemoveBook = book => removeBook(book);
+
+  const handleFilterChange = e => {
+    changeFilter(e.target.value);
   };
+
+  const renderBooksWithFilter = () => (
+    filter === 'All' ? books : books.filter(book => book.category === filter)
+  );
 
   return (
     <>
-      <h2>List of Books</h2>
+      <h1>Magic Books</h1>
+      <CategoryFilter handleChange={e => handleFilterChange(e)} />
+      <h2>{`${filter} Books`}</h2>
       <table className="books-list">
         <thead>
           <tr>
@@ -20,7 +31,7 @@ const BooksList = ({ books, removeBook }) => {
           </tr>
         </thead>
         <tbody>
-          { books && books.map(book => (
+          { books && renderBooksWithFilter().map(book => (
             <tr key={Math.random()}>
               <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
             </tr>
@@ -31,19 +42,24 @@ const BooksList = ({ books, removeBook }) => {
   );
 };
 
+BooksList.defaultProps = {
+  filter: '',
+};
+
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
   removeBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
   books: state.books,
+  filter: state.filter,
 });
 
-const mapDispatchToProps = dispatch => (
-  {
-    removeBook: book => dispatch(REMOVE_BOOK(book)),
-  }
-);
-
+const mapDispatchToProps = dispatch => ({
+  removeBook: book => dispatch(REMOVE_BOOK(book)),
+  changeFilter: criterion => dispatch(CHANGE_FILTER(criterion)),
+});
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
