@@ -41,8 +41,8 @@ const BooksForm = ({ createBook }) => {
   };
 
   return (
-    <>
-      <h2>Add a Book</h2>
+    <section className="add-book">
+      <h2>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <input
@@ -64,7 +64,7 @@ const BooksForm = ({ createBook }) => {
           <button type="submit">Add Book</button>
         </div>
       </form>
-    </>
+    </section>
   );
 };
 
