@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
-import CategoryFilter from '../components/CategoryFilter';
 import { CHANGE_FILTER, REMOVE_BOOK } from '../actions';
+import Header from '../components/Header';
 
 const BooksList = ({
   books, removeBook, changeFilter, filter,
@@ -19,8 +19,7 @@ const BooksList = ({
 
   return (
     <>
-      <h1>Magic Books</h1>
-      <CategoryFilter handleChange={e => handleFilterChange(e)} />
+      <Header handleChange={e => handleFilterChange(e)} />
       <h2>{`${filter} Books`}</h2>
       <table className="books-list">
         <thead>
