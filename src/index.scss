@@ -2,13 +2,14 @@
 
 $azure: #0290ff;
 $black-two: #121212;
-$Cool-blue: #4386bf;
+$cool-blue: #4386bf;
 $Warm-grey: #888;
 $pinkish-gray: #c4c4c4;
 $shadow: rgba(0, 0, 0, 0.05);
 $bg-color-app: #fafafa;
 $bg-color: #f5f6fa;
 $white-color: #fff;
+$dodger-blue: #379cf6;
 
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Roboto Slab', serif; */
@@ -40,10 +41,6 @@ ul {
   border-radius: 4px;
   box-shadow: 0 0 60px 0 $shadow;
   background-color: $bg-color-app;
-}
-
-.books-list {
-  margin: 0 auto;
 }
 
 button {
@@ -104,5 +101,31 @@ header {
     border: 1px solid #e8e8e8;
     border-radius: 50%;
     color: $azure;
+  }
+}
+
+.books-list {
+  article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 170px;
+    margin: 37px 100px 0;
+    padding: 32px 147px 26px 27px;
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+    background-color: $white-color;
+
+    .progress-stats {
+      .oval {
+        width: 68px;
+        height: 68px;
+        border-style: solid;
+        border-width: 5px;
+        border-image-source: linear-gradient(to bottom, $cool-blue, $dodger-blue);
+        border-image-slice: 1;
+        display: block;
+      }
+    }
   }
 }

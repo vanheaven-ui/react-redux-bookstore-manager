@@ -21,22 +21,13 @@ const BooksList = ({
     <>
       <Header handleChange={e => handleFilterChange(e)} />
       <h2>{`${filter} Books`}</h2>
-      <table className="books-list">
-        <thead>
-          <tr>
-            <th>ID.</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          { books && renderBooksWithFilter().map(book => (
-            <tr key={Math.random()}>
-              <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <section className="books-list">
+        { books && renderBooksWithFilter().map(book => (
+          <article key={Math.random()}>
+            <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
+          </article>
+        ))}
+      </section>
     </>
   );
 };
