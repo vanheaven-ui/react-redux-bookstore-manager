@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
+
+$azure: #0290ff;
+$black-two: #121212;
+$Cool-blue: #4386bf;
+$Warm-grey: #888;
+$pinkish-gray: #c4c4c4;
+$shadow: #fafafa;
+$bg-color: #f5f6fa;
+$white-color: #fff;
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto Slab', serif; */
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  width: 100%;
+  text-align: center;
+}
+
+.books-list {
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
