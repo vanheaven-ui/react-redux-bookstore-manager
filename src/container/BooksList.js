@@ -21,27 +21,22 @@ const BooksList = ({
     <>
       <Header handleChange={e => handleFilterChange(e)} />
       <h2>{`${filter} Books`}</h2>
-      <section className="books-list">
-        { books && renderBooksWithFilter().map(book => (
-          <article className="book-details" key={Math.random()}>
-            <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
-            <div className="progress">
-              <div className="oval-loading" />
-              <div className="status">
-                <p className="progress-percent">64%</p>
-                <p className="progress-status">Completed</p>
-              </div>
-            </div>
-            <div className="update-progress">
-              <div className="vertical-line" />
-              <p>CURRENT CHAPTER</p>
-              <p>Chapter 17</p>
-              <button type="button" disabled>UPDATE PROGRESS</button>
-            </div>
-          </article>
-        ))}
-      </section>
-
+      <table className="books-list">
+        <thead>
+          <tr>
+            <th>ID.</th>
+            <th>Title</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          { books && renderBooksWithFilter().map(book => (
+            <tr key={Math.random()}>
+              <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 };
