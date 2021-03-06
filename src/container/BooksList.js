@@ -20,7 +20,7 @@ const BooksList = ({
   return (
     <>
       <Header handleChange={e => handleFilterChange(e)} />
-      <h2>{`${filter} Books`}</h2>
+      <h2 className="title">{`${filter} Books`}</h2>
       <section className="books-list">
         { books && renderBooksWithFilter().map(book => (
           <article key={Math.random()}>
