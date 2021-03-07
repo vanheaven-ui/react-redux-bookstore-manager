@@ -112,4 +112,4 @@ Give a ⭐️ if you like this project!
 ## :clap: Acknowledgements
 
 - [Microverse Community](https://www.microverse.org/) <br />
-- [Redux getiing started Documentation](https://redux.js.org/introduction/getting-started)
+- [Redux getting started Documentation](https://redux.js.org/introduction/getting-started)
