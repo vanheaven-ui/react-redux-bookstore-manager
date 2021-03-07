@@ -19,13 +19,14 @@ font-family: 'Roboto Slab', serif; */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
+  outline: none;
 }
 
 body {
   max-width: 1600px;
   min-height: 100vh;
   background-color: $bg-color;
-  margin-top: 149px;
 }
 
 a {
@@ -41,6 +42,7 @@ ul {
   border-radius: 4px;
   box-shadow: 0 0 60px 0 $shadow;
   background-color: $bg-color-app;
+  padding: 149px 0 265px;
 
   .title {
     padding: 0 100px;
@@ -166,18 +168,76 @@ header {
     line-height: normal;
     letter-spacing: -0.18px;
     color: $warm-gray;
-    margin-bottom: 19px;
   }
 
   form {
     display: flex;
+    align-items: center;
 
     div:first-child {
       flex-basis: 47%;
+      height: 45px;
+      margin: 19px 34px 0 0;
+      padding: 13px 10px 13px 17px;
+      border-radius: 4px;
+      border: 1px solid#e8e8e8;
+      background-color: $white-color;
+
+      input {
+        width: 100%;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.15px;
+        color: $pinkish-gray;
+  
+        &::placeholder {
+          color: $pinkish-gray;
+        }
+      }
     }
 
-    input {
-      width: 100%;
+    div:not(:first-child) {
+      select {
+        width: 285px;
+        height: 45px;
+        margin: 19px 34px 0 0;
+        padding: 6px 15px 9px 16px;
+        border-radius: 4px;
+        border: 1px solid #e8e8e8;
+        background-color: $white-color;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.15px;
+        color: $pinkish-gray;
+      }
+
+      button {
+        width: 184px;
+        height: 45px;
+        margin: 19px 0 0;
+        padding: 12.8px 19px 14.2px 22px;
+        border-radius: 3px;
+        background-color: $azure;
+        font-family: RobotoSlab;
+        font-size: 13px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        color: $white-color;
+        transition: all 0.5s ease;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
   }
 }
