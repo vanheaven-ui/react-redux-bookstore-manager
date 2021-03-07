@@ -5,13 +5,13 @@ const Book = ({ bookObj, removeBook }) => (
     <div className="book-details">
       <h5 className="category">{bookObj.category}</h5>
       <h2>{bookObj.title}</h2>
-      <a href="/author" className="author">Author</a>
+      <a href="/author" className="author text-blue-sm">Author</a>
       <ul className="extra">
-        <li><a href="/comments">Comments</a></li>
+        <li><a href="/comments" className=" comments text-blue-sm">Comments</a></li>
         <li><span className="vertical-line-sm" /></li>
-        <button type="button" onClick={removeBook}>Remove</button>
+        <button type="button" onClick={removeBook} className="text-blue-sm">Remove</button>
         <li><span className="vertical-line-sm" /></li>
-        <li><a href="/edit">Edit</a></li>
+        <li><a href="/edit" className="edit text-blue-sm">Edit</a></li>
       </ul>
     </div>
     <div className="progress-stats">
@@ -25,8 +25,8 @@ const Book = ({ bookObj, removeBook }) => (
       <span className="vertical-line-big" />
       <div className="update-text">
         <p className="curr-chapter">CURRENT CHAPTER</p>
-        <p className="Chapter-num">Chapter 17</p>
-        <button type="button">UPDATE PROGRESS</button>
+        <p className="chapter-num">Chapter 17</p>
+        <button type="button" className="update-btn">UPDATE PROGRESS</button>
       </div>
     </div>
   </>

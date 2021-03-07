@@ -63,6 +63,35 @@ ul {
   display: block;
 }
 
+.text-blue-sm {
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: $cool-blue;
+}
+
+.author,
+.comments,
+.edit,
+.update-btn {
+  cursor: not-allowed;
+}
+
+.curr-chapter,
+.chapter-num,
+.update-btn {
+  font-family: 'Roboto Slab', serif;
+  color: $black-two;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
 button {
   cursor: pointer;
 }
@@ -142,6 +171,7 @@ header {
       height: 70px;
       border: 1px solid #e8e8e8;
       display: block;
+      margin-right: 59px;
     }
 
     .vertical-line-sm {
@@ -167,6 +197,17 @@ header {
     .book-details {
       flex-basis: 50%;
 
+      h2 {
+        font-family: 'Roboto Slab', serif;
+        font-size: 22px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: -0.2px;
+        color: $black-two;
+      }
+
       h5 {
         opacity: 0.5;
         font-size: 14px;
@@ -176,6 +217,7 @@ header {
         line-height: normal;
         letter-spacing: normal;
         color: $black-two;
+        margin-bottom: 4px;
       }
 
       ul {
@@ -203,6 +245,32 @@ header {
 
     .progress-update {
       margin-left: auto;
+      display: flex;
+      align-items: center;
+
+      .curr-chapter {
+        opacity: 0.5;
+        font-size: 13px;
+        letter-spacing: normal;
+        margin-bottom: 7px;
+      }
+
+      .chapter-num {
+        font-size: 16px;
+        letter-spacing: -0.4px;
+        margin-bottom: 30px;
+      }
+
+      .update-btn {
+        width: 184px;
+        height: 33px;
+        padding: 7px 19px 8px 22px;
+        border-radius: 3px;
+        background-color: $azure;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        color: $white-color;
+      }
     }
   }
 }
@@ -226,7 +294,7 @@ header {
     align-items: center;
 
     div:first-child {
-      flex-basis: 47%;
+      flex-basis: 53%;
       height: 45px;
       margin: 19px 34px 0 0;
       padding: 13px 10px 13px 17px;
