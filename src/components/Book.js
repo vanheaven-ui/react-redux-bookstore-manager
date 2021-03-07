@@ -8,9 +8,9 @@ const Book = ({ bookObj, removeBook }) => (
       <a href="/author" className="author">Author</a>
       <ul className="extra">
         <li><a href="/comments">Comments</a></li>
-        <li><span className="line-1" /></li>
+        <li><span className="vertical-line-sm" /></li>
         <button type="button" onClick={removeBook}>Remove</button>
-        <li><span className="line-1" /></li>
+        <li><span className="vertical-line-sm" /></li>
         <li><a href="/edit">Edit</a></li>
       </ul>
     </div>
@@ -22,9 +22,12 @@ const Book = ({ bookObj, removeBook }) => (
       </div>
     </div>
     <div className="progress-update">
-      <p className="curr-chapter">CURRENT CHAPTER</p>
-      <p className="Chapter-num">Chapter 17</p>
-      <button type="button">UPDATE PROGRESS</button>
+      <span className="vertical-line-big" />
+      <div className="update-text">
+        <p className="curr-chapter">CURRENT CHAPTER</p>
+        <p className="Chapter-num">Chapter 17</p>
+        <button type="button">UPDATE PROGRESS</button>
+      </div>
     </div>
   </>
 );
