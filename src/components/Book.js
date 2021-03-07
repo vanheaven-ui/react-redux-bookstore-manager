@@ -13,7 +13,7 @@ const Book = ({ bookObj, removeBook }) => {
         <ul className="extra">
           <li><a href="/comments" className=" comments text-blue-sm">Comments</a></li>
           <li><span className="vertical-line-sm" /></li>
-          <button type="button" onClick={removeBook} className="text-blue-sm">Remove</button>
+          <button type="button" onClick={removeBook} className="remove-btn text-blue-sm">Remove</button>
           <li><span className="vertical-line-sm" /></li>
           <li><a href="/edit" className="edit text-blue-sm">Edit</a></li>
         </ul>
