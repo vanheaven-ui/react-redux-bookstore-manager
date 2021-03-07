@@ -24,6 +24,7 @@ body {
   max-width: 1600px;
   min-height: 100vh;
   background-color: $bg-color;
+  margin: 0 auto;
 }
 
 a {
@@ -175,7 +176,7 @@ header {
     .vertical-line-sm {
       width: 2px;
       height: 24px;
-      margin: 12px 17px 0 15px;
+      margin: 0 17px 0 15px;
       border: 1px solid #e8e8e8;
       display: block;
     }
@@ -222,6 +223,15 @@ header {
         display: flex;
         align-items: center;
         margin-top: 21px;
+
+        button {
+          background-color: transparent;
+          transition: all 0.5s;
+
+          &:hover {
+            font-weight: 700;
+          }
+        }
       }
     }
 
@@ -234,6 +244,26 @@ header {
         height: 68px;
         margin-right: 21px;
       }
+
+      .percent,
+      .progress-status {
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $black-two;
+      }
+
+      .percent {
+        font-size: 32px;
+      }
+
+      .progress-status {
+        opacity: 0.5;
+        font-size: 14px;
+      }
+
     }
 
     .progress-update {
