@@ -47,7 +47,7 @@ const BooksForm = ({ createBook }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Enter book title"
+            placeholder="Book title"
             onChange={e => handleChange(e)}
             value={state.title}
           />
@@ -61,7 +61,7 @@ const BooksForm = ({ createBook }) => {
           </select>
         </div>
         <div className="actions">
-          <button type="submit">Add Book</button>
+          <button type="submit">ADD BOOK</button>
         </div>
       </form>
     </section>
