@@ -4,6 +4,8 @@
 
 The front-end implementation of a web bookstore application.
 
+[![Github Issues](https://img.shields.io/badge/GitHub-Issues-orange)](https://github.com/vanheaven-ui/react-redux-bookstore-manager/issues)
+[![GitHub Pull Requests](https://img.shields.io/badge/GitHub-Pull%20Requests-blue)](https://github.com/vanheaven-ui/react-redux-bookstore-manager/pulls)
 ![Linters](https://img.shields.io/badge/Linters-pass-brightgreen)
 
 </div>
@@ -27,6 +29,7 @@ This project was built to accomplish a task by Microverse Inc to build the front
 2. Project folder structure layout.
 3. Make the page dynamic - This involved adding books to and removing books from the redux store.
 4. Implement a book-list filter.
+5. Add Styling.
 
 ## Live Demo
 The Features of the application were deployed to Heroku
@@ -43,6 +46,7 @@ The tools used to build the application are listed below:
 - redux
 - eslint
 - stylelint
+- SCSS
 
 ## Usage <a name = "usage"></a>
 
