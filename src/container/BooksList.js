@@ -9,8 +9,9 @@ const BooksList = ({
 }) => {
   const handleRemoveBook = book => removeBook(book);
 
-  const handleFilterChange = e => {
-    changeFilter(e.target.value);
+  const handleBtnClick = e => {
+    console.log(e.target.textContent);
+    changeFilter(e.target.textContent);
   };
 
   const renderBooksWithFilter = () => (
@@ -19,7 +20,7 @@ const BooksList = ({
 
   return (
     <>
-      <Header handleChange={e => handleFilterChange(e)} />
+      <Header handleChange={e => handleBtnClick(e)} />
       <h2 className="title">{`${filter} Books`}</h2>
       <section className="books-list">
         { books && renderBooksWithFilter().map(book => (
