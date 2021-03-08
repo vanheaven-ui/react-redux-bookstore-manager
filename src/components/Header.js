@@ -8,10 +8,10 @@ const Header = ({ handleChange }) => (
       <a id="logo" href="/">Bookstore CMS</a>
       <div className="nav-links">
         <a href="/books" className="books">BOOKS</a>
-        <a href="/categories" className="categories">CATEGORIES</a>
-        <CategoryFilter handleChange={handleChange} />
+        <button type="button" className="categories">CATEGORIES</button>
       </div>
     </nav>
+    <CategoryFilter handleChange={handleChange} />
     <div className="user">
       <FaUser />
     </div>
