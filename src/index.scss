@@ -41,17 +41,6 @@ ul {
   box-shadow: 0 0 60px 0 $shadow;
   background-color: $bg-color-app;
   padding: 149px 0 265px;
-
-  .title {
-    padding: 0 100px;
-    font-size: 32px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: -0.18px;
-    color: #888;
-  }
 }
 
 .custom-hr {
@@ -120,6 +109,7 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1400px;
+    margin-right: 20px;
 
     #logo {
       font-size: 30px;
@@ -159,6 +149,44 @@ header {
     border: 1px solid #e8e8e8;
     border-radius: 50%;
     color: $azure;
+  }
+}
+
+.title {
+  padding: 0 100px;
+
+  .cat-btns {
+    margin-bottom: 40px;
+
+    .filter-title {
+      margin-right: 40px;
+    }
+
+    .cat-btn,
+    .default {
+      background-color: $azure;
+      color: $white-color;
+      font-weight: 500;
+      margin-right: 12px;
+      padding: 3px 12px;
+      border-radius: 10px;
+
+      &:hover {
+        opacity: 0.5;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .title-heading {
+    font-size: 32px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    color: #888;
+    text-align: center;
   }
 }
 
