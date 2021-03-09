@@ -1,17 +1,15 @@
-import PropTypes from 'prop-types';
 import { FaUser } from 'react-icons/fa';
-import CategoryFilter from './CategoryFilter';
+import PropTypes from 'prop-types';
 
-const Header = ({ handleChange }) => (
+const Header = ({ clickHandler }) => (
   <header>
     <nav className="navbar">
       <a id="logo" href="/">Bookstore CMS</a>
       <div className="nav-links">
         <a href="/books" className="books">BOOKS</a>
-        <button type="button" className="categories">CATEGORIES</button>
+        <button type="button" className="categories" onClick={clickHandler}>CATEGORIES</button>
       </div>
     </nav>
-    <CategoryFilter handleChange={handleChange} />
     <div className="user">
       <FaUser />
     </div>
@@ -19,7 +17,7 @@ const Header = ({ handleChange }) => (
 );
 
 Header.propTypes = {
-  handleChange: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 export default Header;
