@@ -9,6 +9,7 @@ const CategoryFilter = ({ handleChange }) => {
 
   return (
     <section className="cat-btns">
+      <span className="filter-title">Filter by Categories:-</span>
       <button type="button" className="default" onClick={handleChange}>All</button>
       { bookCategories && bookCategories.map(cat => (
         renderCategoryButton(cat)
