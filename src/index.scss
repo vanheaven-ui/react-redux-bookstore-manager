@@ -10,6 +10,7 @@ $bg-color-app: #fafafa;
 $bg-color: #f5f6fa;
 $white-color: #fff;
 $dodger-blue: #379cf6;
+$danger: #ff3502;
 
 * {
   font-family: 'Montserrat', sans-serif;
@@ -63,8 +64,7 @@ ul {
 
 .author,
 .comments,
-.edit,
-.update-btn {
+.edit {
   cursor: not-allowed;
 }
 
@@ -415,6 +415,51 @@ header {
         font-size: 13px;
         letter-spacing: 0.5px;
         color: $white-color;
+        transition: all 0.5s ease;
+
+        &:hover {
+          opacity: 0.5;
+          font-weight: 700;
+        }
+      }
+
+      .update-text {
+        form {
+          button:first-child {
+            width: max-content;
+            padding: 7px 19px 8px 22px;
+            border-radius: 3px;
+            background-color: $azure;
+            margin-right: 5px;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            color: #fff;
+            transition: all, 0.5s ease;
+
+            &:hover {
+              opacity: 0.5;
+              font-weight: 700;
+              color: rgb(123, 255, 0);
+            }
+          }
+
+          button:last-child {
+            width: max-content;
+            padding: 7px 19px 8px 22px;
+            border-radius: 3px;
+            background-color: $danger;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            color: #fff;
+            transition: all, 0.5s ease;
+
+            &:hover {
+              opacity: 0.5;
+              font-weight: 700;
+            }
+          }
+          
+        }
       }
     }
   }
