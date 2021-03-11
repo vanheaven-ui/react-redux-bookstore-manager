@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Book from '../components/Book';
-import { CHANGE_FILTER, REMOVE_BOOK } from '../actions';
+import { CHANGE_FILTER, REMOVE_BOOK, UPDATE_PROGRESS } from '../actions';
 import Header from '../components/Header';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = ({
-  books, removeBook, changeFilter, filter,
+  books, removeBook, changeFilter, filter, updateProgress,
 }) => {
   // state booleans to toggle filter showing
 
@@ -46,7 +46,11 @@ const BooksList = ({
       <section className="books-list">
         { books && renderBooksWithFilter().map(book => (
           <article key={Math.random()}>
-            <Book bookObj={book} removeBook={() => handleRemoveBook(book)} />
+            <Book
+              bookObj={book}
+              removeBook={() => handleRemoveBook(book)}
+              updateProgress={updateProgress}
+            />
           </article>
         ))}
       </section>
@@ -63,6 +67,7 @@ BooksList.propTypes = {
   removeBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string,
+  updateProgress: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -73,5 +78,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(REMOVE_BOOK(book)),
   changeFilter: criterion => dispatch(CHANGE_FILTER(criterion)),
+  updateProgress: progress => dispatch(UPDATE_PROGRESS(progress)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
