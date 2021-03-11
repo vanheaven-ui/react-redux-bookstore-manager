@@ -13,4 +13,11 @@ const CHANGE_FILTER = criterion => ({
   criterion,
 });
 
-export { CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER };
+const UPDATE_PROGRESS = progress => ({
+  type: 'UPDATE_PROGRESS',
+  progress,
+});
+
+export {
+  CREATE_BOOK, REMOVE_BOOK, CHANGE_FILTER, UPDATE_PROGRESS,
+};
