@@ -4,7 +4,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import UpdateProgress from './UpdateProgress';
 
-const Book = ({ bookObj, removeBook }) => {
+const Book = ({ bookObj, removeBook, updateProgress }) => {
   const [updateActive, setUpdateActive] = useState(false);
 
   const clickUpdateProgress = () => {
@@ -14,7 +14,8 @@ const Book = ({ bookObj, removeBook }) => {
   const clickUpdateOrCancel = e => {
     setUpdateActive(false);
     if (e.target.name === 'update') {
-      console.log(e.target);
+      console.log(bookObj);
+      updateProgress(40);
     }
   };
 
@@ -58,6 +59,7 @@ const Book = ({ bookObj, removeBook }) => {
 Book.propTypes = {
   bookObj: PropTypes.instanceOf(Object).isRequired,
   removeBook: PropTypes.func.isRequired,
+  updateProgress: PropTypes.func.isRequired,
 };
 
 export default Book;
