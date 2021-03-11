@@ -1,8 +1,23 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import UpdateProgress from './UpdateProgress';
 
 const Book = ({ bookObj, removeBook }) => {
+  const [updateActive, setUpdateActive] = useState(false);
+
+  const clickUpdateProgress = () => {
+    setUpdateActive(true);
+  };
+
+  const clickUpdateOrCancel = e => {
+    setUpdateActive(false);
+    if (e.target.name === 'update') {
+      console.log(e.target);
+    }
+  };
+
   const percent = 64;
   return (
     <>
@@ -32,7 +47,8 @@ const Book = ({ bookObj, removeBook }) => {
         <div className="update-text">
           <p className="curr-chapter">CURRENT CHAPTER</p>
           <p className="chapter-num">Chapter 17</p>
-          <button type="button" className="update-btn">UPDATE PROGRESS</button>
+          { updateActive && <UpdateProgress clickHandle={e => clickUpdateOrCancel(e)} /> }
+          { !updateActive && <button type="button" className="update-btn" onClick={clickUpdateProgress}>UPDATE PROGRESS</button> }
         </div>
       </div>
     </>
