@@ -78,6 +78,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   removeBook: book => dispatch(REMOVE_BOOK(book)),
   changeFilter: criterion => dispatch(CHANGE_FILTER(criterion)),
-  updateProgress: progress => dispatch(UPDATE_PROGRESS(progress)),
+  updateProgress: (progress, id) => dispatch(UPDATE_PROGRESS(progress, id)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);

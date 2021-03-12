@@ -13,9 +13,10 @@ const CHANGE_FILTER = criterion => ({
   criterion,
 });
 
-const UPDATE_PROGRESS = progress => ({
+const UPDATE_PROGRESS = (progress, id) => ({
   type: 'UPDATE_PROGRESS',
   progress,
+  id,
 });
 
 export {

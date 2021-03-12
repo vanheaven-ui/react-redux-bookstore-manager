@@ -11,11 +11,13 @@ const initialState = [
     id: 1,
     title: 'Things fall apart',
     category: 'Learning',
+    progress: 0,
   },
   {
     id: 2,
     title: 'The History of the Ancient World',
     category: 'History',
+    progress: 0,
   },
 ];
 

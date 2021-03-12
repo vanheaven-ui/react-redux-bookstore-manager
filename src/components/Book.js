@@ -11,15 +11,6 @@ const Book = ({ bookObj, removeBook, updateProgress }) => {
     setUpdateActive(true);
   };
 
-  const clickUpdateOrCancel = e => {
-    setUpdateActive(false);
-    if (e.target.name === 'update') {
-      console.log(bookObj);
-      updateProgress(40);
-    }
-  };
-
-  const percent = 64;
   return (
     <>
       <div className="book-details">
@@ -36,10 +27,13 @@ const Book = ({ bookObj, removeBook, updateProgress }) => {
       </div>
       <div className="progress-stats">
         <div className="oval">
-          <CircularProgressbar value={percent} />
+          <CircularProgressbar value={bookObj.progress} />
         </div>
         <div className="text-stats">
-          <p className="percent">64%</p>
+          <p className="percent">
+            {bookObj.progress}
+            %
+          </p>
           <p className="progress-status">Completed</p>
         </div>
       </div>
@@ -48,7 +42,15 @@ const Book = ({ bookObj, removeBook, updateProgress }) => {
         <div className="update-text">
           <p className="curr-chapter">CURRENT CHAPTER</p>
           <p className="chapter-num">Chapter 17</p>
-          { updateActive && <UpdateProgress clickHandle={e => clickUpdateOrCancel(e)} /> }
+          { updateActive
+            && (
+            <UpdateProgress
+              toggle={setUpdateActive}
+              updateProgress={updateProgress}
+              progress={bookObj.progress}
+              id={bookObj.id}
+            />
+            )}
           { !updateActive && <button type="button" className="update-btn" onClick={clickUpdateProgress}>UPDATE PROGRESS</button> }
         </div>
       </div>
