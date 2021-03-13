@@ -17,6 +17,7 @@ const BooksForm = ({ createBook }) => {
   const [state, setState] = useState({
     title: '',
     category: 'default',
+    progress: 0,
   });
 
   const handleChange = e => {
@@ -31,7 +32,7 @@ const BooksForm = ({ createBook }) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (state.title !== '' && state.category !== '') {
-      createBook({ ...state, id: Math.ceil(Math.random() * 100) });
+      createBook({ ...state, id: Math.ceil(Math.random() * 100), progress: 0 });
       setState({
         id: 0,
         title: '',

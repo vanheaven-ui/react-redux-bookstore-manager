@@ -1,4 +1,5 @@
 const booksReducer = (state = [], action) => {
+  console.log(state);
   switch (action.type) {
     case 'REMOVE_BOOK':
       return state.filter(book => book.id !== action.book.id);
