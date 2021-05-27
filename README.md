@@ -34,7 +34,7 @@ This project was built to accomplish a task by Microverse Inc to build the front
 ## Live Demo
 The Features of the application were deployed to Heroku
 
-### Checkout the live link [here](https://secure-sierra-90806.herokuapp.com/)
+### Checkout the live link [here](https://microverse-booksapp.herokuapp.com/)
 
 ## 🔧 Building<a name = "with"></a>
 
